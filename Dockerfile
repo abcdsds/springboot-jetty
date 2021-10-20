@@ -6,8 +6,5 @@ WORKDIR /home/app
 
 ARG JAR_FILE=build/libs/*.jar
 COPY ./run.sh ./
-COPY ${JAR_FILE} app.jar
-#ENTRYPOINT ["/bin/sh", "run.sh"]
-#ENTRYPOINT ["/bin/ls", "-la", "${LA_POSITION}"]
-#ENTRYPOINT ["sh", "-c", "ls -la ${LA_POSITION}"]
+COPY ${JAR_FILE} ./app.jar
 ENTRYPOINT ["java", "-jar"]
